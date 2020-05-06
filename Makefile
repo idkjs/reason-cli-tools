@@ -3,11 +3,14 @@
 default:
 	@@echo "use 'make js' or 'make native'"
 
+install:
+	yarn && esy
+
 js:
 	yarn bsb -make-world
 
 native:
-	esy dune build @all
+	esy b dune build @all
 
 clean:
 	esy dune clean

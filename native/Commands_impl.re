@@ -30,7 +30,7 @@ let execSync = (~cmd, ~onOut=?, ()) => {
 };
 
 let canRead = (desc) => {
-  let (r, w, e) = Unix.select([desc], [], [], 0.01);
+  let (r, _w, _e) = Unix.select([desc], [], [], 0.01);
   r != []
 };
 
@@ -52,16 +52,16 @@ let exec = (~cmd, ~onOut) => {
 };
 
 let isAlive = (pid) => {
-  let (p, status) = Unix.waitpid([Unix.WNOHANG, Unix.WUNTRACED], pid);
+  let (p, _status) = Unix.waitpid([Unix.WNOHANG, Unix.WUNTRACED], pid);
   p === 0
 };
 
-let keepAlive = (~cmd, ~onOut=line => (), ~onErr=line => (), ~onStart=() => (), ~checkInterval=1., ()) => {
+let keepAlive = (~cmd, ~onOut=_line => (), ~onErr=_line => (), ~onStart=() => (), ~checkInterval=1., ()) => {
   let buffer_size = 8192;
   let buffer = Bytes.create(buffer_size);
   let start = () => {
     onStart();
-    let (r_in, w_in) = Unix.pipe();
+    let (r_in, _w_in) = Unix.pipe();
     let (r_out, w_out) = Unix.pipe();
     let (r_err, w_err) = Unix.pipe();
     let pid = Unix.create_process("bash", [|"bash", "-c", cmd|], r_in, w_out, w_err);
@@ -93,16 +93,16 @@ let keepAlive = (~cmd, ~onOut=line => (), ~onErr=line => (), ~onStart=() => (), 
     }
   };
   let close = () => {
-    let (pid, out, err) = process^;
+    let (pid, _out, _err) = process^;
     Unix.kill(pid, 9)
   };
   (poll, close)
 };
 
-let poll = ((poll, close)) => poll();
+let poll = ((poll, _close)) => poll();
 
-let run = ((poll, close)) => while (true) poll();
+let run = ((poll, _close)) => while (true) poll();
 
-let runAll = jobs => while (true) List.iter(f => (), jobs);
+let runAll = jobs => while (true) List.iter(_f => (), jobs);
 
-let kill = ((poll, close)) => close();
+let kill = ((_poll, close)) => close();

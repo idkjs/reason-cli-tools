@@ -4,3 +4,4 @@
 *.bs.js
 /_esy
 node_modules
+esy.lock
