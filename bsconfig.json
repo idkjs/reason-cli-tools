@@ -16,5 +16,5 @@
   },
   "refmt": 3,
   "suffix": ".bs.js",
-  "generate-merlin": true,
+  "generate-merlin": true
 }
