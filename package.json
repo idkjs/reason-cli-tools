@@ -1,14 +1,14 @@
 {
-  "name": "@ahrefs/hello-native-bucklescript",
+  "name": "@idkjs/reason-cli-tools",
   "version": "0.0.1",
   "description": "simple lib to showcase how to be compatible with both bucklescript and native",
-  "repository": "https://github.com/ahrefs/hello-native-bucklescript.git",
+  "repository": "https://github.com/idkjs/reason-cli-tools.git",
   "author": "Ahrefs <louis.roche@ahrefs.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ahrefs/hello-native-bucklescript/issues"
+    "url": "https://github.com/idkjs/reason-cli-tools/issues"
   },
-  "homepage": "https://github.com/ahrefs/hello-native-bucklescript#readme",
+  "homepage": "https://github.com/idkjs/reason-cli-tools#readme",
   "keywords": [
     "reason",
     "reasonml",
