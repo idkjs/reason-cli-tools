@@ -1,9 +1,9 @@
 {
   "name": "@idkjs/reason-cli-tools",
   "version": "0.0.1",
-  "description": "simple lib to showcase how to be compatible with both bucklescript and native",
+  "description": "Reason Cli Tools compatible with both bucklescript and native",
   "repository": "https://github.com/idkjs/reason-cli-tools.git",
-  "author": "Ahrefs <louis.roche@ahrefs.com>",
+  "author": "Alain Armand>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/idkjs/reason-cli-tools/issues"
@@ -19,7 +19,8 @@
   "scripts": {
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
-    "watch": "bsb -make-world -w"
+    "watch": "bsb -make-world -w",
+    "test":"node lib/js/test/Test_js.bs.js"
   },
   "devDependencies": {
 		"bs-platform": "7.3.1"

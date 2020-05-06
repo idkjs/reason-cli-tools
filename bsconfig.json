@@ -8,12 +8,18 @@
     }, {
       "dir": "shared",
       "subdirs": true
+    }, {
+      "dir": "test",
+      "dev": true
     }
   ],
-  "package-specs": {
+  "package-specs": [{
     "module": "es6",
     "in-source": true
-  },
+  },{
+    "module": "commonjs",
+    "in-source": false
+  }],
   "refmt": 3,
   "suffix": ".bs.js",
   "generate-merlin": true
